@@ -30,9 +30,12 @@
         <select tabindex="2" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
+        <!--Add label for filter option-->
+        <label for="neighborhoods-select">select neighborhoods</label>
         <select tabindex="2" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
+        <label for="cuisines-select">select cuisines</label>
       </div>
       <ul id="restaurants-list"></ul>
     </section>
