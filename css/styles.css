@@ -269,6 +269,7 @@ nav h1 a {
 }
 #reviews-container h2 {
   color: black;
+  text-align: center;
   font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;
