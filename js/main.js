@@ -214,3 +214,13 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+// Register the Service Worker after the first page has loaded
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker
+    .register('./js/sw/sw.js');
+    .catch(function(err) {
+      console.log("Service Worker failed")
+    })
+  });
+}
