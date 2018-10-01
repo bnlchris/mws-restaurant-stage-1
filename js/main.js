@@ -214,9 +214,15 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
-// Register the Service Worker after the first page has loaded
+// Register the Service Worker after loading the first page
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./js/sw/sw.js');
+    navigator.serviceWorker.register('./js/sw/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
   });
 }

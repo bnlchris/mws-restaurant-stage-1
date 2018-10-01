@@ -1,7 +1,5 @@
-console.log("Service Worker registered");
-
 // Array for files to be cached
-const filesToCache = [
+let filesToCache = [
 	'/',
 	'./restaurant.html',
     './css/styles.css',
@@ -20,14 +18,3 @@ const filesToCache = [
     './img/9.jpg',
     './img/10.jpg',
 ];
-
-// install Service Worker
-self.addEventListener('install', function(event) {
-
-    // wait until installation is done
-    event.waitUntil(
-        caches.open('myCache').then(function(cache) {
-            return cache.addAll(filesToCache);
-        })
-    )
-})
