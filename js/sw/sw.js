@@ -30,3 +30,5 @@ let urlsToCache = [
     '/js/restaurant_info.js',
     '/js/dbhelper.js',
 ];
+
+// Service Worker should return requests with cache, otherwise fetch data from network
