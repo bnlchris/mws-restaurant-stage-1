@@ -32,3 +32,21 @@ let urlsToCache = [
 ];
 
 // Service Worker should return requests with cache, otherwise fetch data from network
+self.addEventListener('fetch', function(event) {
+    // prevent default fetch event
+    event.respondWith(
+        caches.match(event.request)
+            .then(function(response) {
+                // if request URL in cache, use it
+                if (response) {
+                    console.log('URL used from cache')
+                    return response;
+                }
+                // if not, fetch from network
+                else {
+                    console.log('URL not in cache, have to fetch')
+                    return fetch(event.request);
+                }
+            })
+        )
+})
