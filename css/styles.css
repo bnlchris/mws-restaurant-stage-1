@@ -296,6 +296,16 @@ nav h1 a {
 #reviews-list li p {
   margin: 0 0 10px;
 }
+#reviews-list li>p:nth-child(1) {
+  width: 50%;
+  align-self: center;
+  color: red;
+}
+#reviews-list li>p:nth-child(2) {
+  align-self: center;
+  width: 50%;
+  text-align: right;
+}
 #restaurant-hours td {
   color: #666;
 }
