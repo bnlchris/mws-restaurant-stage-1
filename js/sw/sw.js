@@ -45,7 +45,27 @@ self.addEventListener('fetch', function(event) {
                 // if not, fetch from network
                 else {
                     console.log('URL not in cache, have to fetch')
-                    return fetch(event.request);
+                    
+                    // Since request is a stream it has to be cloned
+                    let fetchRequest = event.request.clone();
+                    return fetch(fetchRequest).then(
+                        // add new fetch to cache
+                        function(response) {
+                            // is response valid
+                            if(!response || response.status !== 200 || response.type !== 'basic') {
+                                return response;
+                            }
+
+                            // response is a stream as well and needs to be consumed by the cache as well as the browser. It has to be cloned
+                            let responseToCache = response.clone();
+
+                            caches.open('myCache')
+                            .then(function(cache) {
+                                cache.put(event.request, responseToCache);
+                            })
+                            return response;
+                        }
+                    )
                 }
             })
         )
