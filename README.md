@@ -20,6 +20,18 @@ You have been provided the code for a restaurant reviews website. The code has a
 
 5. In the end, I installed a Service Worker that loads relevant data to the cache to enable a positive offline experience. After loading the page once, the user would be able to see content even while being offline.
 
+### Installation
+
+1. Clone my repository by typing the following to your command line:
+
+$ git clone https://github.com/bnlchris/mws-restaurant-stage-1.git
+
+2. You should load this project on a local server. In order so do this, install [Python](https://www.python.org/) on your local machine.
+
+3. Enter $ python -m http.server 8000 in your command line. Afterwards, open your browser and type localhost:8000.
+
+4. You should see the project in your browser.
+
 ### Resources
 
 [Udacity's Front-End Nandegree](https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001) provides all relevant information to be successful in this project. However, I got some extra help using additional guiding for handling the Service Worker on this page:
