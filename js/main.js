@@ -165,7 +165,7 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2'); // create h2 element to have hierarchical structure
   name.innerHTML = restaurant.name;
   li.append(name);
 
